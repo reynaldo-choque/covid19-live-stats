@@ -1,5 +1,5 @@
 {
-  "homepage": "github.com-reynaldo-choque/covid19-live-stats",
+  "homepage": "https://reynaldo-choque.github.io/covid19-live-stats",
   "name": "covid19-live-stats",
   "version": "0.1.0",
   "private": true,
@@ -26,8 +26,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy-to-git": "gh-pages -d build"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
