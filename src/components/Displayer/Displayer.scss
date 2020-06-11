@@ -1,0 +1,99 @@
+@import "scss/variables";
+
+$ns: "loading-page";
+
+@mixin animation-mixin($name) {
+  @keyframes #{$name} {
+    0% {
+      opacity: 0.9;
+    }
+
+    50% {
+      opacity: 0.8;
+    }
+
+    100% {
+      opacity: 0.9;
+    }
+  }
+}
+
+@include animation-mixin(animate);
+
+$ns: "displayer";
+.#{$ns} {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 10px;
+
+  &__country-wrapper {
+    position: relative;
+    height: 150px;
+    background-color: $backgroud-color;
+    margin: 15px;
+
+    &:hover {
+      cursor: pointer;
+      background: linear-gradient(235deg, $white-green, $black, $white-blue);
+      animation: animate 4s linear infinite;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: red;
+      z-index: -1;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: red;
+      z-index: -2;
+      filter: blur(10px);
+    }
+
+    &:after, &:before {
+      background: linear-gradient(235deg, $white-green, $black, $white-blue);
+    }
+  }
+
+  &__country-content {
+    color: $font-color-white;
+
+    &--header {
+      color: $white;
+      font-size: 2rem;
+      font-weight: bold;
+
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin: 10px;
+      }
+    }
+
+    &--data {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 2px;
+      margin: 10px;
+
+      span {
+        font-size: 1.2rem;
+        margin: 0;
+        padding: 0;
+        border: none;
+      }
+    }
+  }
+}
